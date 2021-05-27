@@ -4,9 +4,9 @@ const form=document.getElementById('send-container')
 const messageInp=document.getElementById('messageInp')
 const container=document.querySelector('.container')
 const audio=new Audio('notification_tune.mp3')
-// const autoscroll=()=>{
-// container.scrollTop=container.scrollHeight;
-// }
+const autoscroll=()=>{
+container.scrollTop=container.scrollHeight;
+}
 
 form.addEventListener('submit',(e)=>{
     e.preventDefault();
@@ -23,7 +23,7 @@ const append= (message,position)=>{
     newuser.classList.add('message');
     newuser.classList.add(position);
     container.append(newuser);
-    // autoscroll();
+    autoscroll();
     if(position=='left' || position=='center'){
         audio.play();
     }
